@@ -48,7 +48,7 @@ def recognize(path,access_token,cookies,fb_dtsg):
 	for recog in payload[0]['faceboxes']:
 		name = recog['recognitions']
 		if name:
-			arr.append({'name':name[0]['user']['name'] , 'certainity' : name[0]['certainty']})
+			arr.append({'name':str(name[0]['user']['name']) , 'certainty' : name[0]['certainty']})
 	
 	#Deleting the uploaded picture
 	graph.delete(path = post_id)

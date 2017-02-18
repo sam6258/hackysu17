@@ -13,7 +13,7 @@ exports.handler = function(event, context, callback) {
 };
 
 var handlers = {
-    'HelloWorldIntent': function () {
+    'CheckDoorIntent': function () {
         initiatePiFacialRecognition(function(obj){
             if (obj) {
                 if (obj == "noPerson") {

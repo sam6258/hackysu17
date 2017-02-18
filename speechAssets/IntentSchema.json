@@ -1,11 +1,10 @@
 {
   "intents": [
     {
-      "intent": "HelloWorldIntent"
+      "intent": "CheckDoorIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
     }
   ]
 }
-

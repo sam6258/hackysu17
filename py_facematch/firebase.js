@@ -24,14 +24,13 @@ ref.on("child_changed", function(snap) {
   console.log("initial data loaded!", snap.key +":",snap.val());
   if(snap.val() == 'callFacialRecog'){                                              //After the Alexa application is triggered by onLaunch or DoorIntent
     var dataString = "";
-  /*
+    
     const py = spawn('python',['./capture.py']);   //Snaps a picture of whatever is in front of the door
     py.stdout.on('data', function(data){
       dataString += data.toString();
     });
 
     py.stdout.on('end', function(){
-      */
       var dataString2 = "";
       const py2 = spawn('python', ['callrecog.py', picName]);
       py2.stdout.on('data', function(data) {
@@ -50,6 +49,6 @@ ref.on("child_changed", function(snap) {
           console.log("setting READ in db to : " + dataString2[0].name);
         }
       });
-    //});
+    });
   }
 });

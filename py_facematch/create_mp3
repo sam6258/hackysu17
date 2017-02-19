@@ -1,8 +1,18 @@
 from gtts import gTTS
 import pygame
-tts = gTTS(text='Hello Sush', lang='en')
-tts.save("greating.mp3")
+import sys
+import threading
 
-pygame.mixer.init()
-pygame.mixer.music.load("greating.mp3")
-pygame.mixer.music.play()
+tts = gTTS(text=sys.argv[1], lang='en')
+tts.save("greeting.mp3")
+
+def playGreeting():
+	pygame.mixer.init()
+	pygame.mixer.music.load("greeting.mp3")
+	pygame.mixer.music.play()
+	while pygame.mixer.music.get_busy() == True:
+		x=1
+	pygame.mixer.quit()
+
+t = threading.Timer(0.00001, playGreeting)
+t.start()

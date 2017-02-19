@@ -46,6 +46,15 @@ ref.on("child_changed", function(snap) {
         }
         else {
           ref.child("Read").set(dataString2[0].name);
+	  var dataString3 = "";
+	  const py3 = spawn('python', ['create_mp3', 'Greetings, ' + dataString2[0].name + ', someone\'s coming to the door']);
+	  py3.stdout.on('data', function(data) {
+		dataString3 += data.toString();
+	  });
+
+	  py3.stdout.on('end', function() {
+	     	//do nothing	
+	  });
           console.log("setting READ in db to : " + dataString2[0].name);
         }
       });

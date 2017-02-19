@@ -1,0 +1,8 @@
+from gtts import gTTS
+import pygame
+tts = gTTS(text='Hello Sush', lang='en')
+tts.save("greating.mp3")
+
+pygame.mixer.init()
+pygame.mixer.music.load("greating.mp3")
+pygame.mixer.music.play()

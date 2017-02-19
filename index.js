@@ -14,19 +14,24 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'CheckDoorIntent': function () {
+        var self = this;
         initiatePiFacialRecognition(function(obj){
             if (obj) {
                 if (obj == "noPerson") {
-                    this.emit(':tell', 'I couldn\'t recognize who\'s at the door');
+                    self.emit(':tell', 'I couldn\'t recognize who\'s at the door');
+                    return;
                 }
                 else {
-                    this.emit(':tell', obj + '\'s at the door.');
+                    self.emit(':tell', obj + '\'s at the door.');
+                    return;
                 }
             }
         });
+        return;
     },
     'Amazon.HelpIntent': function () {
-        this.emit(':ask', 'Say Hello!', 'Say Hello!');
+        self.emit(':ask', 'Say Hello!', 'Say Hello!');
+        return;
     }
 };
 

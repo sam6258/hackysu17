@@ -1,0 +1,10 @@
+{
+  "intents": [
+    {
+      "intent": "CheckDoorIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}

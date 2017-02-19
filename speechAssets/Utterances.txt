@@ -1,0 +1,6 @@
+CheckDoorIntent who's at the door
+CheckDoorIntent check the door
+CheckDoorIntent get the door
+CheckDoorIntent who is at the door
+CheckDoorIntent check who's at the door
+CheckDoorIntent check who is at the door
